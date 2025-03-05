@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="home-section">
+    <div class="hero">
+        <h1>Welcome to <span class="glitch">CyberShieldAI</span></h1>
+        <p>Your AI-powered assistant for combating cybercrime in the digital frontier.</p>
+        <a href="{{ url_for('report') }}" class="cta-button">Report a Crime</a>
+    </div>
+    <div class="mission">
+        <h2>Our Mission</h2>
+        <p>At CyberShieldAI, we empower individuals and organizations to fight back against cyber threats. Our AI-driven platform simplifies crime reporting, provides real-time assistance, and educates users on preventive measures.</p>
+    </div>
+    <div class="features">
+        <div class="feature-card">
+            <div class="icon">🤖</div>
+            <h2>AI-Powered Chatbot</h2>
+            <p>Get instant assistance and report cybercrimes effortlessly.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🔍</div>
+            <h2>Real-Time Analysis</h2>
+            <p>Scan suspicious links and files for threats.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">📚</div>
+            <h2>Educational Resources</h2>
+            <p>Learn how to protect yourself from cyber threats.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

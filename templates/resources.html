@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="awareness-section">
+    <h2>Cybersecurity Awareness AI</h2>
+    <div class="chatbot">
+        <div id="awareness-window">
+            <div class="message bot">🤖 Hi! I'm your Cybersecurity Awareness AI. Ask me anything about staying safe online (e.g., phishing, passwords, 2FA, hacking prevention)!</div>
+        </div>
+        <div class="input-box">
+            <input type="text" id="awareness-input" placeholder="Ask about cybersecurity...">
+            <button onclick="sendAwarenessMessage()">Send</button>
+        </div>
+    </div>
+</section>
+{% endblock %}

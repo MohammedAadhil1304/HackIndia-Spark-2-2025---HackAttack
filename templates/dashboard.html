@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="dashboard-section">
+    <h2>Dashboard</h2>
+    <div class="summary">
+        <div class="metric">
+            <h3>Total Reports</h3>
+            <p>{{ reports|length }}</p>
+        </div>
+        <div class="metric">
+            <h3>Resolved Cases</h3>
+            <p>{{ reports|selectattr('status', 'equalto', 'Resolved')|list|length }}</p>
+        </div>
+        <div class="metric">
+            <h3>Pending Cases</h3>
+            <p>{{ reports|selectattr('status', 'equalto', 'Pending')|list|length }}</p>
+        </div>
+    </div>
+    <div class="reports-table">
+        <h3>Recent Reports</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Report ID</th>
+                    <th>Crime Type</th>
+                    <th>Description</th>
+                    <th>Date Reported</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for report in reports %}
+                <tr>
+                    <td>{{ report[0] }}</td>
+                    <td>{{ report[1] }}</td>
+                    <td>{{ report[2] }}</td>
+                    <td>{{ report[3] }}</td>
+                    <td>{{ report[4] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

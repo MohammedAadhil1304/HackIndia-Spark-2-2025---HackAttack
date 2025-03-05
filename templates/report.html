@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="report-section">
+    <h2>Report a Cyber Crime</h2>
+    <div class="chatbot">
+        <div id="chat-window">
+            <div class="message bot">🔒 Hi! I’m CyberShieldAI, Developed By HackAttack. Tell me about the cybercrime you experienced, and I’ll help you create a report.</div>
+        </div>
+        <div class="input-box">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+        <div class="file-upload">
+            <label for="file-input">📎 Upload Evidence (Screenshots, Emails, etc.)</label>
+            <input type="file" id="file-input" accept="image/*, .pdf">
+        </div>
+        <button id="submit-report-btn" onclick="submitReport()">Submit Report</button>
+    </div>
+</section>
+{% endblock %}
