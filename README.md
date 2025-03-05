@@ -1,8 +1,3 @@
-Below is the content of the `README.md` file formatted as plain text, suitable for saving into a single text file. You can copy this directly into a file named `README.md` in your project directory.
-
----
-
-```
 # CyberShieldAI
 
 ## Your Digital Guardian Against Cybercrime
@@ -10,6 +5,8 @@ Below is the content of the `README.md` file formatted as plain text, suitable f
 Unleash the power of **CyberShieldAI**, an innovative AI-driven platform **Developed By HackAttack** to combat cybercrime in India’s digital frontier! Chat with our intelligent bot to effortlessly report cybercrimes like phishing, hacking, and identity theft—your conversation seamlessly transforms into a detailed report, mailed instantly to the nearest crime branch for swift action. Stay informed with our cutting-edge dashboard, offering a real-time pulse of cybercrime cases across India, alongside your personalized case stats. From uploading evidence to exploring cybersecurity tips via our Awareness AI, CyberShieldAI empowers you to strike back at cyber threats with precision and speed—because your safety is our mission!
 
 ---
+
+![alt text](image.png)
 
 ## Features
 
