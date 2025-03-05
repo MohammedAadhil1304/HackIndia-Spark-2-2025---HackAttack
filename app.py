@@ -40,36 +40,29 @@ def home():
 def report():
     return render_template('report.html')
 
-# Chatbot Endpoint for Reporting with Gemini
+# Chatbot Endpoint for Reporting with Gemini (Reverted to previous version)
 @app.route('/chat', methods=['POST'])
 def chat():
     user_input = request.json['message'].lower()
     conversation_state = request.json.get('conversation_state', {})
 
-    # Define a prompt for Gemini to handle crime reporting step-by-step
+    # Define a prompt for Gemini to handle crime reporting (Reverted)
     prompt = f"""
     You are CyberShieldAI, an assistant designed to help users report cybercrimes through conversation.
     The user said: "{user_input}".
     Current conversation state: {json.dumps(conversation_state)}.
     Your goals:
-    1. Collect the crime type (e.g., phishing, hacking, identity theft).
-    2. Collect a detailed description of the incident.
-    3. Collect the date of the incident (in YYYY-MM-DD format).
-    Rules:
-    - Ask only ONE question at a time, based on what’s missing from the conversation state.
-    - If the user’s input provides a piece of information, update the conversation state and move to the next missing piece.
-    - Do NOT ask multiple questions in a single response.
-    - If all details (crime_type, description, date_reported) are collected, return a JSON response with the report data and a message suggesting submission.
-    - If the input is unclear, ask for clarification about the current step only.
-    Response format:
-    - For questions: Plain text with one question.
-    - When all details are collected:
+    1. Identify the crime type (e.g., phishing, hacking, identity theft).
+    2. Gather a detailed description of the incident.
+    3. Determine the date of the incident (in YYYY-MM-DD format).
+    4. If any information is missing, ask specific follow-up questions.
+    5. Once all details are collected, return a JSON response with the report data and a message suggesting submission.
+    Respond in plain text unless all details are ready, then use JSON format:
     {{
-        "message": "Here’s the report I’ve prepared:\\nCrime Type: [crime_type]\\nDescription: [description]\\nDate: [date_reported]\\nReady to submit?",
+        "message": "text response",
         "report": {{ "crime_type": "...", "description": "...", "date_reported": "..." }},
-        "ready_to_submit": true
+        "ready_to_submit": true/false
     }}
-    Current date for reference: 2025-03-05 (use this to interpret relative dates like 'yesterday').
     """
     
     try:

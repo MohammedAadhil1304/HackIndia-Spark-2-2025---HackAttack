@@ -167,14 +167,14 @@ footer {
 .message.bot {
     background-color: #3a3a5e;
     color: #00ffcc;
-    align-self: flex-start; /* AI messages on the left */
+    align-self: flex-start;
     margin-right: auto;
 }
 
 .message.user {
     background-color: #00ffcc;
     color: #0a0a1a;
-    align-self: flex-end; /* User messages on the right */
+    align-self: flex-end;
     margin-left: auto;
 }
 
